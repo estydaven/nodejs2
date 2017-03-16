@@ -5,7 +5,12 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const server = http.createServer(app);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+
 const currentStatic = require('./gulp/config').root;
 const config = require('./config.json');
 const uploadDir = config.upload;
@@ -13,15 +18,7 @@ const uploadDir = config.upload;
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-/*
-mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
-  user: config.db.user,
-  pass: config.db.password
-}).catch(e => {
-  console.error(e);
-  throw e;
-});
-*/
+
 mongoose.connect('mongodb://estydaven:flsyldfnhs11@ds131510.mlab.com:31510/portfolio');
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
@@ -36,12 +33,28 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, currentStatic)));
+app.use(session({
+    secret: 'secret',
+    key: 'keys',
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        maxAge: null
+    },
+    saveUninitialized: false,
+    resave: false,
+    store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
+
 
 app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
 app.use('/contact', require('./routes/mail'));
 app.use('/addpost', require('./routes/addpost'));
+app.use('/', require('./routes/login'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {
@@ -58,7 +71,7 @@ app.use(function (err, req, res, next) {
     .render('500');
 });
 
-server.listen(3000, '188.225.35.182');
+server.listen(3000, 'localhost');
 server.on('listening', function () {
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);

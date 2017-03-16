@@ -5,15 +5,25 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 const config = require('../config.json');
+const isAdmin = (req, res, next) => {
+    // если в сессии текущего пользователя есть пометка о том, что он является
+    // администратором
+    if (req.session.isAdmin) {
+        //то всё хорошо :)
+        return next();
+    }
+    //если нет, то перебросить пользователя на главную страницу сайта
+    res.redirect('/');
+};
 
-router.get('/', function (req, res) {
+router.get('/', isAdmin, function (req, res) {
   let obj = {
     title: 'Загрузка картинки'
   };
   res.render('pages/upload', obj);
 });
 
-router.post('/', function (req, res) {
+router.post('/', isAdmin, function (req, res) {
   let form = new formidable.IncomingForm();
   form.uploadDir = config.upload;
   form.parse(req, function (err, fields, files) {

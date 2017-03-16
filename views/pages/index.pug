@@ -31,16 +31,17 @@ block content
                   .inner-container
                     .inner-title
                       | АВТОРИЗУЙТЕСЬ
+                    .status
                     .auth__form
                       form.form#login(action='login' method="POST")
                         .form__container
                           .wrapper-input.input-group.input-group_iconed
-                            input.form-input(type="text" placeholder="Логин")
+                            input.form-input(name="login" type="text" placeholder="Логин")
                             .input-group__icon-field
                               svg.input-group__icon
                                 use(xlink:href='assets/img/sprite.svg#login')
                           .wrapper-input.input-group.input-group_iconed
-                            input.form-input(type="password" placeholder="Пароль")
+                            input.form-input(name="password" type="password" placeholder="Пароль")
                             .input-group__icon-field
                               svg.input-group__icon
                                 use(xlink:href='assets/img/sprite.svg#password')
@@ -60,8 +61,8 @@ block content
                           .input-error-msg
 
                         .auth-form__buttons.form__buttons
-                          button.form__btn.return-btn(type="button") На главную
-                          button.form__btn(type="submit")
+                          button.form__btn.return-btn(name="" type="reset") На главную
+                          button.form__btn(name="" type="submit")
                             a(href="/addpost") Войти
 
 

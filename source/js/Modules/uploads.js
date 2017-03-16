@@ -89,3 +89,24 @@ function prepareSendPost(e) {
         resultContainer.innerHTML = data;
     });
 }
+
+//---- block Login
+
+const formLogin = document.querySelector('#login');
+
+if (formLogin) {
+    formLogin.addEventListener('submit', prepareAuth);
+}
+
+function prepareAuth(e) {
+    e.preventDefault();
+    let resultContainer = document.querySelector('.status');
+    let data = {
+        login: formLogin.login.value,
+        password: formLogin.password.value
+    };
+    resultContainer.innerHTML = 'Sending...';
+    sendAjaxJson('/', data, function (data) {
+        resultContainer.innerHTML = data;
+    });
+}

@@ -10,7 +10,7 @@ module.exports = function() {
                 padding: 50
             }))
 
-            .pipe($.gulp.dest('./public/images/'))
-            .pipe($.gulp.dest('./public/assets/css/'));
+            .pipe($.gulp.dest('assets/images/'))
+            .pipe($.gulp.dest('assets/css/'));
     });
 };
