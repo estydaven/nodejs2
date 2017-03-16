@@ -1,0 +1,269 @@
+.blog-title{
+  min-height: 600px;
+}
+
+.blog {
+  position: relative;
+  @extend %clearfix;
+  width: 100%;
+  margin-bottom: rem(200);
+
+  @include phone{
+    margin-bottom: rem(350);
+  }
+}
+
+.title{
+  font-family: 'sansus_webissimoregular';
+  font-size: rem(63);
+}
+
+.blog__triangle {
+  display: block;
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  bottom: 100%;
+}
+
+.left__triangle {
+  fill: #ffffff;
+}
+
+.right__triangle{
+  fill: #ffffff;
+}
+
+.blog-container {
+  padding: rem(70) rem(70) 0;
+  margin-bottom: rem(200);
+  font-family: 'robotoregular';
+  transition: .5s;
+  position: relative;
+  display: flex;
+  height: 100%;
+  @extend %clearfix;
+}
+
+.blog__tabs {
+  width: 22.77778%;
+  text-align: right;
+  float: left;
+
+
+  @include tablets{
+    float: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: rem(250);
+    z-index: 10;
+    background-color: rgba(14, 85, 210, 1);
+    transition: all 1s;
+    transform: translateX(-100%);
+  }
+  @include phone{
+    width: rem(200);
+  }
+  @include phones{
+    &:after{
+      right: rem(-9);
+      }
+  }
+}
+
+.blog__tabs-active{
+  transform: translateX(0);
+}
+
+.articles {
+  width: 72.77778%;
+  float: right;
+
+  @include tablets{
+    width: 100%;
+    float: none;
+    padding-bottom: rem(70);
+  }
+
+}
+
+.blog__tabs-list {
+  margin-top: rem(10);
+  &:last-child{
+    margin-bottom: 0;
+  }
+  @include tablets{
+    margin-top: 100%;
+  }
+}
+
+.blog__tabs-item {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  padding: rem(14) rem(17);
+  transition: .5s all ease-out;
+  border-right: 3px solid transparent;
+  text-decoration: none;
+
+
+  &:hover{
+    border-right-color: #083c96;
+    color: #083c96;
+  }
+
+  }
+
+
+.blog__tabs-link-active{
+  border-right-color: #083c96;
+  color: #083c96;
+
+  @include tablets{
+    color: #ffffff;
+    font-family: 'robotobold';
+    font-size: rem(16);
+  }
+}
+
+.blog-menu__link{
+  display: inline-block;
+  padding: rem(14) rem(17);
+  padding-left: rem(10);
+  border-right: 3px solid transparent;
+  text-decoration: none;
+  color: #6b6e78;
+  &:hover {
+    border-right-color: #004cd1;
+    color: #004cd1;
+  }
+  &_active {
+    border-right-color: #004cd1;
+    color: #004cd1;
+  }
+
+  @include tablets {
+    color: rgba(#fff, .7);
+
+    &:hover {
+      color: #fff;
+    }
+
+    &_active {
+      color: #fff;
+      font-family: 'robotobold';
+    }
+
+  }
+}
+
+.sidemenu-btn{
+  display: block;
+  width: rem(60);
+  height: 60px;
+  background-color: #0e55d2;
+  border-radius: 50%;
+  position: absolute;
+  right: rem(-15);
+  cursor: pointer;
+
+  &_disabled{
+    display: none;
+
+    @include tablets{
+      display: block;
+    }
+  }
+}
+
+.articles__list {
+  width: 100%;
+  padding: 0 rem(20);
+
+  @include phone{
+    padding: 0;
+  }
+}
+
+.articles__item {
+  position: relative;
+  margin-bottom: rem(23);
+  padding-bottom: rem(20);
+
+  &after{
+    content: '';
+    display: block;
+    width: rem(681);
+    height: 5px;
+    background-color: rgba(55, 62, 66, 0.1);
+    position: absolute;
+    bottom: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  &:last-child:after {
+    display: none;
+  }
+}
+
+.article__head {
+  margin-bottom: rem(27);
+}
+
+.article__title {
+  font-family: 'sansus_webissimoregular';
+  font-size: rem(35);
+  color: #474b57;
+  margin-bottom: rem(30);
+}
+
+.article__date {
+  color: #7e97c2;
+}
+
+.article__text p {
+  margin-bottom: rem(20);
+
+  @include phone{
+    font-size: rem(16);
+  }
+}
+
+.code-viewer{
+  width: 100%;
+  > code {
+    display: block;
+    border: #ccc solid 1px;
+    padding: rem(5);
+    overflow: auto;
+  }
+  &:before{
+    content: "Code:";
+    display: block;
+    font-size: rem(12);
+    background: #e8e8e8;
+    border: #ccc solid 1px;
+    border-bottom: none;
+  }
+}
+
+.code__pic{
+  width: 100%;
+}
+
+.post-line{
+  background: url(../img/post-line.png)center left no-repeat;
+  width: 100%;
+  height: rem(10);
+  padding-top: rem(30);
+}
+
+.blog-footer{
+  width: 100%;
+  height: auto;
+  position: relative;
+}

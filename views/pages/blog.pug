@@ -1,0 +1,58 @@
+extends ../_template
+
+
+block content
+    .preloader
+        .preloader__content
+            .preloader__animation
+            .preloader__percent 0%
+    .wrapper
+
+        section.section-about.about-parallax
+            include ../common/socials
+            include ../common/hamburger
+            .bg-parallax
+                img.parallax-img(src='assets/img/parallax.jpg')
+            .stars-parallax
+                img.stars(src='assets/img/stars1.svg')
+            .user__hero-parallax.user
+                .user__pic
+                    img.user__pic-item(src='assets/img/face.jpg')
+                .user__name БЛОГ
+                .user__desc Статьи, которые я написала
+            include ../common/arrow-down
+
+        section.blog
+            svg(height ="150px" width="100%" viewbox="0 0 1000 85" preserveAspectRatio='none').blog__triangle
+                polygon(points="0,0 0,86 500.8,86 500.8,75.5").left__triangle
+                polygon(points="1000,0 1000,86 500,86 500,75.5").right__triangle
+            .blog-container
+                .blog__tabs
+                    ul.blog__tabs-list
+                        li.blog__tabs-item
+                            a.blog-menu__link.blog-menu__link_active(href='#post1') Самое важное в sass
+                        li.blog__tabs-item
+                            a.blog-menu__link(href='#post2') Приёмы в вёрстке, без которых не обходится ни один сайт
+                        li.blog__tabs-item
+                            a.blog-menu__link(href='#post3') Статья
+                    .sidemenu-btn.sidemenu-btn_disabled
+                section.articles
+                    ul.articles__list
+                        each index in items
+                            li.articles__item
+                                .article__title= index.title
+                                .article__date= index.data
+                                .article__text= index.body
+                                pre.code-viewer
+                                    code.
+                                        &lt;div id="foo"&gt;
+                                        &lt;div id="bar"&gt;test&lt;/div&gt;
+                                        &lt;/div&gt;
+                                .post-line
+
+
+
+        section.blog-footer
+            include ../common/footer
+
+

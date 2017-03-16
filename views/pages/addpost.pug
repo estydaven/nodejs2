@@ -1,0 +1,19 @@
+extends ../_template
+
+block content
+  include ../common/_greating
+  include ../common/_menu
+
+  .container-form
+    form.form-upload.form-upload_post#blog( method="POST")
+        .form__subtitle Добавить запись в блог
+        .status
+            //input(name="" type="reset" value="Очистить").form__btn-reset
+        .form__upload Добавить запись
+        label.form__line-input.form__line-input_post
+            input(name="title" type="text" placeholder="Название").form__input-label
+        label.form__line-input.form__line-input_post
+            input(name="date" type="text" placeholder="Дата").form__input-label
+        textarea(placeholder="Содержание" name="text" cols='100').form__textarea
+        .form__btns.form__line-input
+            input(name="" type="submit" value="Отправить").form__btn-send

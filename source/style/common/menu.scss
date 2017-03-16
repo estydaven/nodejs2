@@ -1,0 +1,34 @@
+.menu {
+  background-color: #dfdcd5;
+}
+.menu__container {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.menu__row {
+  display: inline-block;
+  list-style-type: none;
+  transition: all 1s;
+  background-color: #dfdcd5;
+  border-right: 1px solid #ffffff;
+  &:hover {
+    background-color: #ffffff;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.menu__link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font: 25px 'robotoregular', sans-serif;
+  color: #9e9fa3;
+  transition: all 1s;
+  padding: 5px 15px;
+  &:hover {
+    color: #0e55d2;
+  }
+}

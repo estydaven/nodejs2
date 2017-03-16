@@ -1,0 +1,97 @@
+extends ../_template
+
+
+
+block content
+    .preloader
+        .preloader__content
+            .preloader__animation
+            .preloader__percent 0%
+    .wrapper
+
+        section.section-about.about-parallax
+            include ../common/socials
+            include ../common/hamburger
+            .bg-parallax
+                img.parallax-img(src='assets/img/parallax.jpg')
+            include ../common/avatar-all
+            .arrow.arrow_ar
+                a.arrow-down__img(href="", target='_blank')
+                    svg.arrow-down__pic
+                        use(xlink:href='assets/img/sprite.svg#portf_arrow_down')
+
+            section.works__col
+                svg.triangle( height="150px" width="100%" viewbox='0 0 1000 85', preserveaspectratio='none')
+                    polygon.left(points='0,0 0,86 500.8,86 500.8,75.5')
+                    polygon.right(points='1000,0 1000,86 500,86 500,75.5')
+                .section-title__works
+                    .main-title МОИ РАБОТЫ
+                    img.stars2(src='assets/img/stars2.png')
+
+        section.portfolio__wrapper
+
+            .column.column_left.portfolio__column.portfolio__column_left
+                .work
+                    .work__preview
+                        img.work__pic(src='')
+                    .work__desc
+                        .work__title.block-title
+                        .work__technology
+                        a.work__link(href="#")
+                            svg.work__icon
+                                use(xlink:href='assets/img/sprite.svg#link')
+                            span Посмотреть сайт
+
+
+            .column.column_right.portfolio__column.portfolio__column_right
+                .work__slider.work-slider
+                    .work__prev.toggle.column.column_left
+                        a.toggle__link.toggle__link_prev(href="#")
+                            svg.toggle__icon
+                                use(xlink:href='assets/img/sprite.svg#portf_arrow_down')
+                            ul.work-slider__list.work-slider__list_prev
+                                li.work-slider__item(data-title="Сайт школы онлайн-образования" data-technology="html, css" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-1.png")
+                                li.work-slider__item(data-title="Сайт ИТ-компании" data-technology="html, css, javascript" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-2.png")
+                                li.work-slider__item(data-title="Портал видеоуроков и ИТ сообщество" data-technology="javascript" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-3.png")
+
+                    .work__next.toggle.column.column_right
+                        a.toggle__link.toggle__link_next(href="#")
+                            svg.toggle__icon
+                                use(xlink:href='assets/img/sprite.svg#portf_arrow_up')
+                            ul.work-slider__list.work-slider__list_next
+                                li.work-slider__item(data-title="Сайт школы онлайн-образования" data-technology="html, css" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-1.png")
+                                li.work-slider__item(data-title="Сайт ИТ-компании" data-technology="html, css, javascript" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-2.png")
+                                li.work-slider__item(data-title="Портал видеоуроков и ИТ сообщество" data-technology="javascript" data-link="http://loftschool.ru")
+                                    img.work-slider__img(src="assets/img/work-3.png")
+
+        section.section.about-me
+            .section-title__work
+                .main-title ЧТО ОБО МНЕ ГОВОРЯТ
+                img.stars2(src='assets/img/stars2.png')
+            .section-opinion
+                .opinion
+                    .opinion__img
+                        img(src='assets/img/dima.png').opinion__pic
+                    .opinion__text
+                        p Валентина проходила обучение не где-то, а в Loftschool! Пять недель хардкорных испытаний и тяжелых ночей.
+                    .opinion__text-author
+                        span.text Ковальчук Дмитрий
+                        p - основатель Loftschool
+                .opinion
+                    .opinion__img
+                        img(src='assets/img/vova.png').opinion__pic
+                    .opinion__text
+                        p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                    .opinion__text-author
+                        span.text Сабанцев Владимир
+                        p - преподаватель
+
+                include ../common/contact-me
+            include ../common/footer
+
+

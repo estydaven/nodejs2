@@ -1,0 +1,125 @@
+extends ../_template
+
+
+
+block content
+    .preloader
+        .preloader__content
+            .preloader__animation
+            .preloader__percent 0%
+    .wrapper
+
+        section.section-about.about-parallax.about-parallax_disabled
+            include ../common/socials
+            include ../common/hamburger
+            .bg-parallax
+                img.parallax-img(src='assets/img/parallax.jpg')
+            include ../common/avatar-all
+            include ../common/arrow-down
+        section.section.about
+            .about__col.about__col_left
+                svg(viewbox="0 0 1000 110" preserveAspectRatio='none').about__triangle
+                    polygon(points="0,0 0,110 1000,110")
+                .section-title_fl_left
+                    .main-title_about Обо мне
+                    img(src='assets/img/stars3.png').stars3
+                .about-user
+                    .about__pic
+                        img(src='assets/img/face2.jpg').about__img
+                    .block-title Кто я
+                    .block-text
+                        p Я веб-разработчик из Гродно, Беларусь. Мне 28 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+            .about__col.about__col_right
+                svg(viewbox="0 0 1000 110" preserveAspectRatio="none").about__triangle
+                    polygon(points="0,110 1000,110 1000,0")
+                .skills
+                    .block-title Чем я могу быть вам полезна
+
+                    .skills__text
+                        p Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте попорядку.
+
+
+                    -
+                        skills = [
+                        {
+                        title: "Frontend",
+                        technologies: [
+                        {
+                        name: "HTML5",
+                        percent: 75
+                        },
+                        {
+                        name: "CSS3",
+                        percent: 60
+                        },
+                        {
+                        name: "JavaScript & jQuery",
+                        percent: 25
+                        }
+                        ]
+                        },
+                        {
+                        title: "Backend",
+                        technologies: [
+                        {
+                        name: "PHP",
+                        percent: 25
+                        },
+                        {
+                        name: "mySQL",
+                        percent: 30
+                        },
+                        {
+                        name: "Node.js & npm",
+                        percent: 5
+                        },
+                        {
+                        name: "Mongo.db",
+                        percent: 5
+                        }
+                        ]
+                        },
+                        {
+                        title: "WorkFlow",
+                        technologies: [
+                        {
+                        name: "Git",
+                        percent: 50
+                        },
+                        {
+                        name: "Gulp",
+                        percent: 70
+                        },
+                        {
+                        name: "Bower",
+                        percent: 20
+                        }
+                        ]
+                        }
+
+                        ]
+
+
+                    ul.skills-group
+                        each skill in skills
+                            li.skills-group__item
+                                .skills-group__title= skill.title
+                                ul.skills-list
+                                    each tech in skill.technologies
+                                        li.skills-list__item
+                                            .skill(data-percent= tech.percent)
+                                                svg.skill__circle(viewBox="0 0 100 100")
+                                                    circle(r="40" cx="50" cy="50" transform="rotate(-90 50 50)").skills__circle-under
+                                                    circle(r="40" cx="50" cy="50" transform="rotate(-90 50 50)").skills__circle-above
+                                                    .skill_title= tech.name
+
+
+
+        section.l-contacts
+            #map.map
+            include ../common/contacts
+            include ../common/footer
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBB6rM-vv-YQ8hbju8XpPvHfbYfPDeCrtU&callback=initMap' async defer)
+
+

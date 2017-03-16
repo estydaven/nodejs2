@@ -1,0 +1,31 @@
+.greating {
+  overflow: hidden;
+  position: relative;
+
+  padding: 30px 20px 30px;
+  background: #004cd1;
+
+
+  &_text {
+    font: 45px 'robotomedium', sans-serif;
+    color: #fff;
+    float: left;
+  }
+
+  &_link {
+    position: absolute;
+    top: 36%;
+    right: 0;
+    padding-right: 100px;
+    height: 114px;
+    color: #ffffff;
+    opacity: 0.7;
+    float: right;
+    text-align: center;
+    font: 25px 'robotomedium', sans-serif;
+  }
+}
+
+.greating_picture.m--show {
+  transform: translate3D(0, 0, 0);
+}

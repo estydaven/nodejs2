@@ -1,0 +1,16 @@
+.contact-me
+    .block-title.block-title_color СВЯЗАТЬСЯ СО МНОЙ
+    .status
+    form#mail(action="" method="" class="form")
+        .form__container
+            .input-group.input-group_dark
+                input.form__input.form__input_dark(name='name', placeholder='Ваше имя', type="text")
+            .input-group.input-group_dark
+                input.form__input_dark.form__input(name='email', placeholder='Bаш email', type='email')
+            .input-group.input-group_dark
+                textarea.form__input.form__input_dark.form-input_area(name='text', placeholder='Ваше сообщение')
+            .input-error-msg
+        .buttons
+            input.form__btn.form__btn_dark(name="" type="submit" value="Отправить")
+            input.form__btn.form__btn_dark(name="" type="reset" value="Очистить")
+include ../common/arrow-up

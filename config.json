@@ -1,0 +1,15 @@
+{
+  "upload":"public/upload",
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "user": "webinar.loftschool@gmail.com",
+    "pass": "qsc12345"
+  },
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "test",
+    "user": "",
+    "password": ""
+  }
+}
