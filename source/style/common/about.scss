@@ -505,6 +505,10 @@
   @include phones{
     width: 100%;
     background: #ffffff;
+    top: 20%;
+  }
+
+  @include phone{
     top: 16%;
   }
 }

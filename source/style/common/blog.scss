@@ -6,6 +6,7 @@
   position: relative;
   @extend %clearfix;
   width: 100%;
+  background-color: #ffffff;
   margin-bottom: rem(200);
 
   @include phone{
@@ -225,8 +226,10 @@
   color: #7e97c2;
 }
 
-.article__text p {
+.article__text {
   margin-bottom: rem(20);
+  P{
+  margin-bottom: rem(20);}
 
   @include phone{
     font-size: rem(16);
