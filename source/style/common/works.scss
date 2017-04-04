@@ -71,7 +71,7 @@
     background-color: #f0efe9;
   }
   &_right {
-    background-color: #efebe0;
+    background-color: #f0efe9;
   }
 }
 .portfolio__column {
@@ -94,6 +94,22 @@
   }
 }
 
+.work__speak{
+  width: 100%;
+  text-align: center;
+  font-family: 'robotoregular';
+  font-size: 16px;
+  background-color: #f0efe9;
+  color:#474b57;
+  padding: rem(10);
+}
+
+.speak{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: rem(10);
+}
+
 .work {
   height: 100%;
 }
@@ -102,7 +118,7 @@
   height: 70%;
   margin: 0 auto;
   padding: rem(43) 0 rem(43);
-  background-color: #efebe0;
+  background-color: #f0efe9;
   position: absolute;
   left: 100%;
   z-index: 100;

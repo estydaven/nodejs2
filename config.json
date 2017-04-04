@@ -9,7 +9,7 @@
     "host": "localhost",
     "port": "27017",
     "name": "test",
-    "user": "",
-    "password": ""
+    "user": "user",
+    "password": "user"
   }
 }

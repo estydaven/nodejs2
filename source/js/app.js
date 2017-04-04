@@ -4,8 +4,6 @@ if (preload !== null) preloader.init();
 
 window.onload = function () {
 
-
-
     //Index Parallax
     var parallax = document.querySelector('#parallax');
 

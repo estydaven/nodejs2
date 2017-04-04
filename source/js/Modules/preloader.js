@@ -23,7 +23,7 @@ var preloader = (function(){
 
         $('.preloader__percent').text(percents + '%');
 
-        if (percents >= 100) {
+        if (percents = 100) {
             preloader.fadeOut();
         }
     };
