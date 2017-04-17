@@ -52,7 +52,7 @@ app.use(session({
 
 app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
-app.use('/contact', require('./routes/mail'));
+app.use('/contact-me', require('./routes/mail'));
 app.use('/addpost', require('./routes/addpost'));
 app.use('/', require('./routes/login'));
 

@@ -12,6 +12,12 @@
     margin-right: rem(20);
   }
 
+  &_workses{
+    @include phones{
+    top: 2%;
+  }
+  }
+
   &:hover {
     opacity: 0.7;
   }
@@ -93,6 +99,10 @@
     font-family: 'sansus_webissimoregular';
     font-weight: 400;
     text-align: center;
+
+    @include phones{
+      font-size: 30px;
+    }
   }
   ul {
     list-style: none;

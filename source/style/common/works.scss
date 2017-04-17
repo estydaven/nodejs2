@@ -1,6 +1,10 @@
 
 .works__col{
   margin-top: rem(380);
+
+  @include phones{
+    margin-top: rem(300);
+  }
 }
 
 .left{
@@ -12,6 +16,12 @@
   fill: rgba(13, 15, 31, 0.8);
   border: 0;
   }
+
+.triangle{
+  @include phones{
+    height: 50px;
+  }
+}
 
 .main-title{
   width: 100%;
@@ -34,6 +44,10 @@
   height: 160px;
   display: block;
   margin: 0 auto;
+
+  @include phones{
+    height: 100px;    
+  }
 }
 
 .section-title__works {
@@ -44,7 +58,7 @@
   margin-top: rem(-6);
 
   @include phones{
-    height: 140px;
+    height: 100px;
   }
 }
 
@@ -86,9 +100,15 @@
     @include tablets {
       height: 80%;
     }
+    @include phone{
+      height: 70%;
+    }
   }
   &_right {
     @include tablets {
+      height: 20%;
+    }
+    @include phone{
       height: 20%;
     }
   }
@@ -102,12 +122,20 @@
   background-color: #f0efe9;
   color:#474b57;
   padding: rem(10);
+
+  @include phones{
+    text-align: left;
+  }
 }
 
 .speak{
   width: 80%;
   margin: 0 auto;
   margin-bottom: rem(10);
+
+  @include phones{
+    width: 100%;
+  }
 }
 
 .work {
@@ -132,8 +160,12 @@
     padding: 1% -0px;
   }
   @include phones{
-    width: 90%;
-    height: 45%;
+    width: 100%;
+    height: 50%;
+  }
+  @include phone{
+    height: 60%;
+    width: 100%;
   }
 }
 .work__pic {
@@ -164,7 +196,9 @@
       max-width: 100%;
     }
   }
-
+  @include phone{
+    padding: 0;    
+  }
 }
 
 .work__technology {
@@ -175,13 +209,14 @@
   color: #004cd1;
   margin-bottom: rem(40);
 
-
-
   @include tablets {
     margin-bottom: rem(30);
   }
   @include phones {
     margin-bottom: rem(20);
+  }
+  @include phone{
+    padding: 0;
   }
 }
 
@@ -288,6 +323,10 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+
+  @include phone{
+    height: 98%;
+  }
 }
 .work-slider__list_next {
   .work-slider__item {
@@ -321,7 +360,13 @@
   left: 0;
   bottom: 0;
   margin: auto;
+
+  @include phone{
+    height: 95%;
+  }
 }
+
+
 .slider__list {
   width: 100%;
   height: 100%;
@@ -353,11 +398,15 @@
 
 .about-me{
   width: 100%;
-  height: auto;
-  background-image: url(../img/lighth.png);
+  height: 100vh;
+  background-image: url(../img/milkyway.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  @include phone{
+    margin-top: rem(-64);
+  }
 }
 
 .section-opinion{
@@ -365,7 +414,7 @@
   width: 50%;
   margin: 0 auto;
   color: #ffffff;
-  min-height: 1100px;
+  
 
   @include tablets{
     width: 90%;
@@ -376,6 +425,7 @@
   }
   @include phone{
     min-height: 1540px;
+    width: 90%;
   }
 }
 
