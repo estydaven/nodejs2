@@ -630,12 +630,7 @@
   }
 
   @include phones{
-    width: 100%;    
-    top:17%;
-  }
-
-  @include phone{
-    top: 13%;
+    display: none;
   }
 }
 
@@ -886,6 +881,10 @@
 .socials-footer__item{
   display: inline-block;
   margin-right: rem(30);
+
+  @include laptop{
+    margin-right: rem(16);
+  }
 }
 
 .icon-footer{

@@ -63,7 +63,7 @@
 }
 
 .section-title__work{
-  height: 200px;
+  
   width: 100%;
   display: block;
   padding-top: rem(20);
@@ -71,10 +71,17 @@
 
 .portfolio__wrapper {
   @extend %clearfix;
-  height: 100vh;
-  min-height: 550px;
+  height: 450px;    
   text-align: center;
   position: relative;
+
+  @include tablets{
+    height: 600px;
+  }
+
+  @include phone{
+    height: 550px;
+  }
 }
 .column {
   float: left;
@@ -155,7 +162,7 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 80%;
     height: 55%;
     padding: 1% -0px;
   }
@@ -196,7 +203,7 @@
       max-width: 100%;
     }
   }
-  @include phone{
+  @include phones{
     padding: 0;    
   }
 }
@@ -252,6 +259,8 @@
 .work__slider {
   @extend %clearfix;
   height: 30%;
+  width: 81%;
+  margin: 0 auto;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -286,7 +295,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(10, 10, 10, 0.4);
+    
   }
 
   &_prev {
@@ -403,9 +412,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
+  @include tablets{
+    margin-top: 10px;
+  }
 
   @include phone{
     margin-top: rem(-64);
+    height: auto;
   }
 }
 
@@ -413,19 +427,18 @@
   position: relative;
   width: 50%;
   margin: 0 auto;
-  color: #ffffff;
-  
+  color: #ffffff;  
 
   @include tablets{
     width: 90%;
   }
   @include phones{
-    width: 80%;
-    min-height: 1400px;
+    width: 80%; 
+    min-height: 600px;   
   }
-  @include phone{
-    min-height: 1540px;
+  @include phone{    
     width: 90%;
+     min-height: 800px;  
   }
 }
 
@@ -445,9 +458,14 @@
 
 .opinion__text{
   background-image: url(../img/quote.png);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;    
   background-position: left top;
   padding-top: rem(20);
+
+  @include phones{
+    margin-left: rem(100);
+    margin-top: rem(-20);
+  }
 }
 
 .text{
@@ -457,6 +475,10 @@
 .opinion__text-author{
   padding: rem(30);
   text-align: center;
+
+  @include phones{
+    padding: rem(15);
+  }
 }
 
 .opinion__img{
@@ -469,7 +491,12 @@
   @include tablets{
     margin-bottom: rem(20);
   }
+  @include phones{
+  float: left;
 }
+}
+
+
 
 .opinion__pic{
   width: 100%;
