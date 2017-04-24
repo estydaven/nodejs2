@@ -438,7 +438,7 @@
   }
   @include phone{    
     width: 90%;
-     min-height: 800px;  
+     min-height: 700px;  
   }
 }
 
@@ -465,6 +465,7 @@
   @include phones{
     margin-left: rem(100);
     margin-top: rem(-20);
+    font-size: 14px;
   }
 }
 
@@ -478,6 +479,7 @@
 
   @include phones{
     padding: rem(15);
+    font-size: 14px;
   }
 }
 

@@ -698,7 +698,7 @@
     height: 220px;
   }
   @include phone{
-    height: 270px;
+    height: 280px;
   }
 }
 
@@ -734,10 +734,9 @@
 
   @include tablets{
     float: none;
-    width: 100%;
+    width: 90%;
     text-align: center;
-    padding: rem(5);
-    border-bottom: 2px solid #97989d;
+    padding: rem(5);    
     margin-top: auto;
     display: block;
   }
@@ -759,18 +758,17 @@
   @include tablets{
     float: right;
     text-align: right;
-    margin-left: auto;
+    margin: 0 auto;
     margin-top: rem(10);
     bottom: auto;
     margin-right: rem(20);
     width: auto;
-    margin-left: 0;
+    
   }
   @include phones{
     bottom: auto;
     margin: auto;
-    width: 100%;
-    float: none;    
+    width: 100%;       
     text-align: center;
   }
 }
@@ -794,7 +792,6 @@
     text-align: center;
     float: none;
     margin: 0 auto;
-    border-bottom: 2px solid #97989d;
     height: 80px;
     bottom: auto;
   }
@@ -806,7 +803,7 @@
 
 .nav{
   @include phones{
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
   @include phone{
@@ -851,8 +848,8 @@
   margin-right: rem(100);
 
   @include phones{
-    margin-left: rem(160);
-
+    margin-left: 30%;
+    min-width: 200px;
   }
   @include phone{
     float: none;
